@@ -22,6 +22,7 @@ const Pagination = () => {
       .catch(() => {
         setLoading(false);
         setError("Failed to fetch data");
+        alert("Failed to fetch data!"); // Trigger alert on fetch failure
       });
   }, []);
 
@@ -86,9 +87,7 @@ const Pagination = () => {
         <button onClick={handlePrevious} disabled={currentPage === 1}>
           Previous
         </button>
-        <span style={{ margin: "0 10px" }}>
-           {currentPage} 
-        </span>
+        <span style={{ margin: "0 10px" }}>{currentPage}</span>
         <button onClick={handleNext} disabled={currentPage === totalPages}>
           Next
         </button>
